@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 # Working Timer Links
 Below are some ready to use timers that can just be put straight into OBS. 
