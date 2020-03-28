@@ -1,37 +1,40 @@
-const progressBar = document.getElementsByClassName("progress-bar")[0];
-setInterval(() => {
-  const computedStyle = getComputedStyle(progressBar);
-  const width = parseFloat(computedStyle.getPropertyValue("--width")) || 0;
-  progressBar.style.setProperty("--width", width + 0.1);
-}, 305);
+var Timer = function(opts) {
+  var self = this;
 
-document.getElementById("timer").innerHTML = 5 + ":" + 60;
-startTimer();
+  self.opts     = opts || {};
+  self.element  = opts.element || null;
+  self.minutes  = opts.minutes || 0;
+  self.seconds  = opts.seconds || 30;
 
-function startTimer() {
-  var presentTime = document.getElementById("timer").innerHTML;
-  var timeArray = presentTime.split(/[:]+/);
-  var m = timeArray[0];
-  var s = checkSecond(timeArray[1] - 1);
-  if (s == 59) {
-    m = m - 1;
+  self.start = function() {
+    self.interval = setInterval(countDown, 1000);
+  };
+
+  self.stop = function() {
+    clearInterval(self.interval);
+  };
+
+  function countDown() {
+    self.seconds--;
+    if (self.minutes == 0 && self.seconds == 0) {
+      self.stop();
+    }
+
+    if (self.seconds < 0) {
+      self.seconds = 59;
+      self.minutes--;
+    }
+
+    if (self.seconds <= 9) { self.seconds = '0' + self.seconds; }
+
+    self.element.textContent = self.minutes + ':' + self.seconds;
   }
-  //if(m<0){}
+};
 
-  document.getElementById("timer").innerHTML = m + ":" + s;
-  console.log(m);
-  setTimeout(startTimer, 1000);
-}
+var myTimer = new Timer({
+  minutes: 5,
+  seconds: 00,
+  element: document.querySelector('#timer')
+});
 
-function checkSecond(sec) {
-  if (sec < 10 && sec >= 0) {
-    sec = "0" + sec;
-  } // add zero in front of numbers < 10
-  if (sec < 0) {
-    sec = "59";
-  }
-  if (sec < -1) {
-    sec = "";
-  }
-  return sec;
-}
+myTimer.start();
