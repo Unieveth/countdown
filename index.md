@@ -3,8 +3,11 @@ layout: default
 ---
 
 # Working Timer Links
+Below are some ready to use timers that can just be put straight into OBS. 
 
 [10 Minutes](./10 Mins/index.html).
+[5 Minutes](./15 Mins/index.html).
+[1 Minutes](./1 Mins/index.html).
 
 ## How to change timer length
 
