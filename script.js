@@ -39,7 +39,7 @@ var Timer = function(opts) {
 
 var myTimer = new Timer({
   minutes: 5,
-  seconds: 60,
+  seconds: 001,
   element: document.querySelector('#timer')
 });
 
