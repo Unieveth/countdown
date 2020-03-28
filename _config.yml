@@ -1,1 +1,4 @@
 theme: jekyll-theme-cayman
+title: OBS Countdown and Loading Bar
+description: A OBS friendly countdown and loading bar writen in HTML
+show_downloads: true
