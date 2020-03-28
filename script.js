@@ -30,5 +30,8 @@ function checkSecond(sec) {
   if (sec < 0) {
     sec = "59";
   }
+  if (sec = 0) {
+    sec = "";
+  }
   return sec;
 }
