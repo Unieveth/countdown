@@ -31,7 +31,7 @@ body {
   width: calc(var(--width, 0) * 1%);
   min-width: 2rem;
   max-width: calc(100% - 1em);
-  background-color: #069;
+  background-color: #3DF2F2;
   border-radius: 1em;
   padding: 1em;
 }
