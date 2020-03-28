@@ -31,7 +31,8 @@ body {
   width: calc(var(--width, 0) * 1%);
   min-width: 2rem;
   max-width: calc(100% - 1em);
-  background-color: #3DF2F2;
+  background: rgb(22,77,89);
+  background: linear-gradient(90deg, rgba(22,77,89,1) 0%, rgba(61,242,242,1) 100%);
   border-radius: 1em;
   padding: 1em;
 }
