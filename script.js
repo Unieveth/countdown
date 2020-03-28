@@ -1,3 +1,9 @@
+const progressBar = document.getElementsByClassName("progress-bar")[0];
+setInterval(() => {
+  const computedStyle = getComputedStyle(progressBar);
+  const width = parseFloat(computedStyle.getPropertyValue("--width")) || 0;
+  progressBar.style.setProperty("--width", width + 0.1);
+}, 305);
 var Timer = function(opts) {
   var self = this;
 
@@ -33,7 +39,7 @@ var Timer = function(opts) {
 
 var myTimer = new Timer({
   minutes: 5,
-  seconds: 00,
+  seconds: 60,
   element: document.querySelector('#timer')
 });
 
